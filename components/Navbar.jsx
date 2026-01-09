@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 const navItems = ["HOME", "ABOUT US", "PRODUCTS", "GALLERY", "BLOG", "REVIEW"];
 
 const linkMap = {
-  HOME: "#",
+  HOME: "/",
   "ABOUT US": "/about",
   PRODUCTS: "/products",
   GALLERY: "/gallery",

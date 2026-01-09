@@ -31,7 +31,7 @@ const fadeUp = {
 
 const Statistics = () => {
   return (
-    <section className="w-full bg-white pt-20 pb-28 -mt-10 overflow-hidden">
+    <section className="w-full bg-[#f7f7f5] pt-20 pb-28 -mt-10 overflow-hidden">
       
       {/* INNER CONTAINER */}
       <motion.div
@@ -73,7 +73,7 @@ const Statistics = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[
             {
@@ -113,7 +113,7 @@ const Statistics = () => {
                 stiffness: 200,
                 damping: 18,
               }}
-              className="bg-white rounded-2xl p-8 border shadow-sm"
+              className="bg-white rounded-2xl p-8 py-6 shadow-sm"
             >
               <p className="text-sm text-gray-500 mb-6">{item.title}</p>
               <h3 className="font-serif text-6xl font-medium text-gray-800">
