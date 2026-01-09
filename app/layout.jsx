@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           ${inter.variable}
           ${unifraktur.variable}
           bg-white
-          text-white
+        
           overflow-x-hidden
         `}
       >

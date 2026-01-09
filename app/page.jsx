@@ -13,9 +13,10 @@ import ConnectSection from "@/components/ConnectSection";
 export default function HomePage() {
   return (
     <>
-      
+      <section className="bg-primary min-h-screen">
       <Hero />
       <Statistics />
+      </section>
       <AboutSection />
       <OilsSection />
       <HandpickedSection /> 
