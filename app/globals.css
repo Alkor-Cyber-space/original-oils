@@ -12,15 +12,15 @@
 
 
 /* Global body styles */
-body {
+/* body {
   background-color: var(--color-primary);
   color: white;
-}
+} */
 
-/* body {
+ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-} */
+} 
 
 
 .scrollbar-hide::-webkit-scrollbar {
