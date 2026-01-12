@@ -2,19 +2,23 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const articles = [
   {
-    image: "/journal1.png",
-    title: "Anti-inflammatory and Antioxidant Effects of Sesame Oil on Atherosclerosis.",
+    image: "/blogs/journal1.png",
+    title: "On the way back from Munnar.",
+    slug: "on-the-way-back-from-munnar",
   },
   {
     image: "/journal2.png",
-    title: "Physicochemical properties and stability of black cumin seed oil as affected by different extraction methods.",
+    title: "My Journey with Hair Fall After Delivery",
+    slug: "my-journey-with-hair-fall-after-delivery",
   },
   {
     image: "/journal3.png",
-    title: "Mustard oil and cardiovascular health.",
+    title: "From My Grandmother to My Daughter",
+    slug: "from-my-grandmother-to-my-daughter",
   },
 ];
 
@@ -70,12 +74,16 @@ export default function TraditionJournal() {
                 {item.title}
               </p>
 
-              <button className="mt-3 text-sm text-gray-600 flex items-center gap-2 hover:text-gray-900 transition">
-                Read More
-                <span className="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center text-xs">
-                  →
-                </span>
-              </button>
+              <Link
+  href={`/blog/${item.slug}`}
+  className="mt-3 text-sm text-gray-600 flex items-center gap-2 hover:text-gray-900 transition"
+>
+  Read More
+  <span className="w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center text-xs">
+    →
+  </span>
+</Link>
+
             </div>
           </motion.div>
         ))}
