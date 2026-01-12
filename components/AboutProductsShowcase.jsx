@@ -62,29 +62,30 @@ export default function AboutProductShowcase() {
               className="relative flex flex-col md:flex-row items-center md:items-start"
             >
               {/* IMAGE FRAME */}
-          <div
-  className={`
+              <div
+                className={`
     w-44
     ${item.image === "/about/oil-6.png"
-      ? "h-110 md:h-140 -translate-y-12 md:-translate-y-38"
-      : "h-72 md:h-95"}
+                    ? "h-110 md:h-140 -translate-y-12 md:-translate-y-38"
+                    : "h-72 md:h-95"}
     md:w-37.5
     flex items-center justify-center
     transition-all duration-300 ease-out
     ${active === index ? "scale-[1.05]" : "opacity-90"}
   `}
->
+              >
 
                 <div className="relative w-full h-full">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 300px"
                     className={
-    item.image === "/about/oil-6.png"
-      ? "object-cover"
-      : "object-contain"
-  }
+                      item.image === "/about/oil-6.png"
+                        ? "object-cover"
+                        : "object-contain"
+                    }
                   />
                 </div>
               </div>

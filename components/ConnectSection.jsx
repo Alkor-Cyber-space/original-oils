@@ -15,8 +15,11 @@ export default function ConnectSection() {
           src="/footer-bg.png"
           alt="Footer Illustration"
           fill
+          className="object-cover"
           priority
         />
+
+
         {/* dark overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
         {/*  bottom fade gradient */}
@@ -25,7 +28,7 @@ export default function ConnectSection() {
           <p className="text-sm font-kumbh tracking-wide mb-1 md:mb-1 sm:mb-0 opacity-90">
             Wellness in Every Drop
           </p>
-          <h2 className="text-md subheading font-medium
+          <h2 className="text-md font-playfair font-medium
                sm:text-md md:text-5xl
                max-w-md mx-auto
                leading-tight text-center
@@ -46,7 +49,7 @@ export default function ConnectSection() {
       {/* ================= FOOTER CONTENT ================= */}
       <div className="bg-linear-to-b from-[#352900] via-[#372C03] to-black">
 
-        <div className="max-w-7xl mx-auto px-6 py-3 grid grid-cols-2 md:grid-cols-3 gap-1 ">
+        <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-3 gap-1 ">
 
           {/* Quick Links */}
           <div className="font-kumbh">
@@ -143,7 +146,8 @@ export default function ConnectSection() {
           </div>
           {/* Map */}
           <div
-            className=" w-screen md:w-full -mx-6 md:mx-0 h-65 md:h-55 rounded-none md:rounded-xl overflow-hidden shadow-lg mt-6">
+            suppressHydrationWarning
+            className="col-span-2 md:col-span-1 w-screen md:w-full -mx-6 md:mx-0 h-[220px] md:h-[200px] overflow-hidden rounded-none md:rounded-xl">
             <iframe
               src="https://www.google.com/maps?q=Edathadan%20Artisans%20Originals&output=embed"
               className="w-full h-full border-0"
@@ -164,7 +168,6 @@ export default function ConnectSection() {
             All Rights Reserved
           </p>
         </div>
-
 
       </div>
     </footer>

@@ -78,7 +78,7 @@ export default function CraftSection() {
                     alt="user"
                     width={56}
                     height={56}
-                    quality={100}
+                    // quality={100}
                     className="rounded-full border-4 border-white object-cover shadow-sm"
                   />
                 ))}

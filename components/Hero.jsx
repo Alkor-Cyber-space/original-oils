@@ -9,7 +9,6 @@ const Hero = () => {
         items-center text-white
         relative overflow-hidden pt-28
         -mt-12
-        will-change-transform
       "
     > 
       {/* Left Section */}
@@ -65,25 +64,29 @@ const Hero = () => {
       {/* Right Section */}
       <div className="relative h-[80vh] md:h-[90vh] flex items-end justify-center md:justify-end z-20">
         <div className="relative w-full max-w-120 h-full z-40 -translate-y-8">
-          <Image
-            src="/hero-bg.png"
-            alt="Coconut Oil Bottle"
-            fill
-            priority
-            className="object-contain drop-shadow-2xl"
-          />
+        <Image
+  src="/hero-bg.png"
+  alt="Coconut Oil Bottle"
+  width={900}
+  height={900}
+  priority
+  className="w-full h-auto object-contain drop-shadow-2xl"
+/>
+
         </div>
       </div>
 
       {/* TORN PAPER — EXACT POSITION */}
       <div className="absolute bottom-6 left-0 w-full h-72.5 z-10 overflow-hidden">
-        <Image
-          src="/paper.png"
-          alt="torn edge"
-          fill
-          priority
-          className="object-cover object-top"
-        />
+       <Image
+  src="/paper.png"
+  alt="torn edge"
+  fill
+  priority
+  sizes="100vw"
+  className="object-cover object-top"
+/>
+
       </div>
     </section>
   );

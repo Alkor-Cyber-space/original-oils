@@ -45,9 +45,6 @@ const AboutSection = () => {
         }
       );
 
-      /* =========================
-         IMAGES – CINEMATIC ENTRANCE
-      ========================= */
       tl.from(
         imagesRef.current,
         {
@@ -63,9 +60,6 @@ const AboutSection = () => {
         "+=0.2"
       );
 
-      /* =========================
-         PARALLAX DRIFT (NO JUMPING)
-      ========================= */
       imagesRef.current.forEach((img, i) => {
         gsap.to(img, {
           y: i % 2 === 0 ? -25 : -15,
@@ -84,89 +78,91 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-28 overflow-hidden bg-[#f3f3f3]"
-    >
-      {/* WHITE BOX */}
-      <div
-        ref={boxRef}
-        className="absolute inset-10 bg-white rounded-3xl shadow-[0_40px_120px_rgba(0,0,0,0.08)] z-10"
-      />
-
-      {/* IMAGES */}
-      <div
-        ref={(el) => (imagesRef.current[0] = el)}
-        className="absolute top-20 left-20 z-20 cursor-pointer"
+    <div className="relative">
+      <section
+        ref={sectionRef}
+        className="relative py-28 overflow-hidden bg-[#f3f3f3]"
       >
-        <Image
-          src="/about-5.jpg"
-          alt="Oil Bottle"
-          width={180}
-          height={180}
-          className="rounded-xl shadow-xl"
+        {/* WHITE BOX */}
+        <div
+          ref={boxRef}
+          className="absolute inset-10 bg-white rounded-3xl shadow-[0_40px_120px_rgba(0,0,0,0.08)] z-10"
         />
-      </div>
 
-      <div
-        ref={(el) => (imagesRef.current[1] = el)}
-        className="absolute top-20 right-20 z-20 cursor-pointer"
-      >
-        <Image
-          src="/about-2.jpg"
-          alt="Oil Bottle"
-          width={180}
-          height={180}
-          className="rounded-xl shadow-xl"
-        />
-      </div>
+        {/* IMAGES */}
+        <div
+          ref={(el) => (imagesRef.current[0] = el)}
+          className="absolute top-20 left-20 z-20 cursor-pointer"
+        >
+          <Image
+            src="/about-5.jpg"
+            alt="Oil Bottle"
+            width={180}
+            height={180}
+            className="rounded-xl shadow-xl"
+          />
+        </div>
 
-      <div
-        ref={(el) => (imagesRef.current[2] = el)}
-        className="absolute bottom-24 left-20 z-20 cursor-pointer"
-      >
-        <Image
-          src="/about-3.jpg"
-          alt="Oil Bottle"
-          width={180}
-          height={180}
-          className="rounded-xl shadow-xl"
-        />
-      </div>
+        <div
+          ref={(el) => (imagesRef.current[1] = el)}
+          className="absolute top-20 right-20 z-20 cursor-pointer"
+        >
+          <Image
+            src="/about-2.jpg"
+            alt="Oil Bottle"
+            width={180}
+            height={180}
+            className="rounded-xl shadow-xl"
+          />
+        </div>
 
-      <div
-        ref={(el) => (imagesRef.current[3] = el)}
-        className="absolute bottom-24 right-20 z-20 cursor-pointer"
-      >
-        <Image
-          src="/about-4.jpg"
-          alt="Oil Bottle"
-          width={180}
-          height={180}
-          className="rounded-xl shadow-xl"
-        />
-      </div>
+        <div
+          ref={(el) => (imagesRef.current[2] = el)}
+          className="absolute bottom-24 left-20 z-20 cursor-pointer"
+        >
+          <Image
+            src="/about-3.jpg"
+            alt="Oil Bottle"
+            width={180}
+            height={180}
+            className="rounded-xl shadow-xl"
+          />
+        </div>
 
-      {/* CONTENT */}
-      <div className="relative z-20 max-w-3xl mx-auto text-center px-6">
-        <p className="text-sm tracking-widest text-gray-400 uppercase mb-4">
-          About Us
-        </p>
+        <div
+          ref={(el) => (imagesRef.current[3] = el)}
+          className="absolute bottom-24 right-20 z-20 cursor-pointer"
+        >
+          <Image
+            src="/about-4.jpg"
+            alt="Oil Bottle"
+            width={180}
+            height={180}
+            className="rounded-xl shadow-xl"
+          />
+        </div>
 
-        <h2 className="font-serif text-5xl md:text-6xl font-medium text-gray-800 leading-tight">
-          Where Tradition <br /> Meets Purity
-        </h2>
+        {/* CONTENT */}
+        <div className="relative z-20 max-w-3xl mx-auto text-center px-6">
+          <p className="text-sm tracking-widest text-gray-400 uppercase mb-4">
+            About Us
+          </p>
 
-        <p className="mt-6 text-gray-500 text-lg leading-relaxed max-w-xl mx-auto">
-          Experience traditionally crafted oils that enrich <br />
-          your health and elevate everyday living.
-        </p>
+          <h2 className="font-serif text-5xl md:text-6xl font-medium text-gray-800 leading-tight">
+            Where Tradition <br /> Meets Purity
+          </h2>
 
-        <button className="mt-10 px-8 py-3 border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-800 hover:text-white transition duration-300">
-          All Products
-        </button>
-      </div>
-    </section>
+          <p className="mt-6 text-gray-500 text-lg leading-relaxed max-w-xl mx-auto">
+            Experience traditionally crafted oils that enrich <br />
+            your health and elevate everyday living.
+          </p>
+
+          <button className="mt-10 px-8 py-3 border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-800 hover:text-white transition duration-300">
+            All Products
+          </button>
+        </div>
+      </section>
+    </div>
   );
 };
 
