@@ -12,9 +12,10 @@ module.exports = {
         greenKerala: "#2fa84f",
       },
       fontFamily: {
-        serif: ["var(--font-playfair)"],
-        sans: ["var(--font-inter)"],
-        gothic: ["var(--font-gothic)"], 
+        kumbh: ["var(--font-kumbh)"],
+        playfair: ["var(--font-playfair)"],
+        inter: ["var(--font-inter)"],
+        gothic: ["var(--font-gothic)"],
       },
     },
   },

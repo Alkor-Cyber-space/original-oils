@@ -26,9 +26,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
- 
-
-  // Scroll detection (HOME only)
   useEffect(() => {
     if (!isHome) return;
 
@@ -44,7 +41,7 @@ const Navbar = () => {
   const showFullNavbar = isHome && !scrolled;
 
   const navBg = showFullNavbar
-    ? "bg-[#d6b21e]" // GOLD only on home initial
+    ? "bg-[#d6b21e]" 
     : "bg-transparent";
 
   const navTextColor = showFullNavbar ? "text-white" : "text-gray-900";
@@ -52,17 +49,16 @@ const Navbar = () => {
 
   return (
     <>
-      {/* NAVBAR */}
-     <nav
-  className={`
+      <nav
+        className={`
     fixed top-0 left-0 w-full z-50
     transition-all duration-500 ease-out
     ${isHome ? "bg-transparent" : "bg-transparent"}
   `}
->
+      >
 
         <div className="flex items-center justify-between px-8 py-3">
-          
+
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)}>
             <Image
@@ -70,7 +66,8 @@ const Navbar = () => {
               alt="Original Oils Logo"
               width={showFullNavbar ? 190 : 175}
               height={70}
-              priority      
+              priority
+              style={{ width: "auto" }}
               className="object-contain transition-all duration-500 hover:scale-105"
             />
           </Link>
@@ -91,10 +88,8 @@ const Navbar = () => {
                 ))}
               </ul>
 
-              <Link href="/contact" className="hidden md:block">
-                <button className="bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 hover:shadow-lg">
-                  CONTACT US ➚
-                </button>
+              <Link href="/contact" className="hidden md:block bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 hover:shadow-lg">
+                CONTACT US ➚
               </Link>
             </>
           )}
@@ -135,10 +130,8 @@ const Navbar = () => {
             </li>
           ))}
 
-          <Link href="/contact" onClick={() => setOpen(false)}>
-            <button className="mt-4 bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105">
-              CONTACT US ➚
-            </button>
+          <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 inline-block text-center">
+            CONTACT US ➚
           </Link>
         </ul>
       </div>

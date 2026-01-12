@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "global.d.ts"
-, "components/Navbar.jsx", "app/page.jsx", "app/layout.jsx", "app/about/page.jsx", "components/Hero.jsx", "components/ConnectSection.jsx", "components/CraftSection.jsx", "components/HandpickedSection.jsx", "components/OilsSection.jsx", "components/Testimonials.jsx", "components/AboutUs.jsx"  ],
+, "components/Navbar.jsx", "app/page.jsx", "app/layout.jsx", "app/about/page.jsx", "components/Hero.jsx", "components/ConnectSection.jsx", "components/CraftSection.jsx", "components/HandpickedSection.jsx", "components/OilsSection.jsx", "components/Testimonials.jsx", "components/AboutUs.jsx", "next.config.js"  ],
   "exclude": ["node_modules"]
 }
