@@ -20,85 +20,105 @@ const linkMap = {
 const Navbar = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isAbout = pathname === "/about";
-
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
+  // ✅ Hydration-safe mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // ✅ Screen detection
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // ✅ Scroll logic (home only)
   useEffect(() => {
     if (!isHome) return;
 
-    const onScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
+  if (!mounted) return null;
 
-  const showFullNavbar = isHome && !scrolled;
+  const showFullNavbar = isDesktop && isHome && !scrolled;
 
-  const navBg = showFullNavbar
-    ? "bg-[#d6b21e]" 
-    : "bg-transparent";
-
-  const navTextColor = showFullNavbar ? "text-white" : "text-gray-900";
+  const textColor = showFullNavbar ? "text-white" : "text-gray-900";
   const iconColor = showFullNavbar ? "text-white" : "text-gray-900";
 
   return (
     <>
-      <nav
-        className={`
-    fixed top-0 left-0 w-full z-50
-    transition-all duration-500 ease-out
-    ${isHome ? "bg-transparent" : "bg-transparent"}
-  `}
-      >
+      {/* ================= NAVBAR ================= */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-500">
+        <div className="flex items-center justify-between px-6 py-3">
 
-        <div className="flex items-center justify-between px-8 py-3">
-
-          {/* LOGO */}
+          {/* LOGO (LEFT ALWAYS) */}
           <Link href="/" onClick={() => setOpen(false)}>
-            <Image
-              src="/logo.png"
-              alt="Original Oils Logo"
-              width={showFullNavbar ? 190 : 175}
-              height={70}
-              priority
-              style={{ width: "auto" }}
-              className="object-contain transition-all duration-500 hover:scale-105"
-            />
+            {( !isHome || scrolled || !isDesktop) && (
+              <Image
+                src="/logo.png"
+                alt="Original Oils Logo"
+                width={255}
+                height={90}
+                priority
+                className="h-16 sm:h-14 w-auto object-contain transition-all duration-500 -ml-7 sm:ml-0"
+              />
+            )}
           </Link>
 
-          {/* DESKTOP NAV (HOME ONLY FULL) */}
-          {showFullNavbar && (
-            <>
-              <ul className={`hidden md:flex gap-8 text-sm font-medium ${navTextColor}`}>
-                {navItems.map((item) => (
-                  <li key={item} className="relative group">
-                    <Link href={linkMap[item]}>
-                      <span className="transition-colors duration-300 group-hover:text-[#843d0b]">
-                        {item}
-                      </span>
-                      <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#6b3e26] transition-all duration-300 group-hover:w-full" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* DESKTOP NAV (RIGHT) */}
+         {showFullNavbar && (
+  <>
+    {/* CENTER LINKS */}
+    <ul
+      className={`
+        hidden md:flex
+        absolute left-1/2 -translate-x-1/2
+        gap-8 text-sm font-medium
+        ${textColor}
+      `}
+    >
+      {navItems.map((item) => (
+        <li key={item} className="relative group">
+          <Link href={linkMap[item]}>
+            <span className="transition-colors group-hover:text-[#843d0b]">
+              {item}
+            </span>
+            <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#6b3e26] transition-all group-hover:w-full" />
+          </Link>
+        </li>
+      ))}
+    </ul>
 
-              <Link href="/contact" className="hidden md:block bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 hover:shadow-lg">
-                CONTACT US ➚
-              </Link>
-            </>
-          )}
+    {/* RIGHT BUTTON */}
+    <div className="hidden md:flex">
+      <Link
+        href="/contact"
+        className="bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 hover:shadow-lg"
+      >
+        CONTACT US ➚
+      </Link>
+    </div>
+  </>
+)}
 
-          {/* HAMBURGER */}
+
+          {/* HAMBURGER (MOBILE ONLY) */}
           {!showFullNavbar && (
             <button
               onClick={() => setOpen(!open)}
-              className={`transition-all duration-300 hover:scale-110 ${iconColor}`}
+              className={`transition-all duration-300 ${iconColor}`}
             >
               {open ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -106,39 +126,41 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
       <div
         className={`
           fixed top-16 left-0 w-full z-40
-          bg-white/10 backdrop-blur-md
-          text-gray-900
+          bg-white/90 backdrop-blur-md
           border-b border-black/10
-          transition-all duration-500 ease-in-out
+          transition-all duration-500
           ${open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
         `}
       >
-        <ul className="flex flex-col gap-6 px-8 py-8 text-sm font-medium">
+        <ul className="flex flex-col gap-6 px-8 py-8 text-sm font-medium text-gray-900">
           {navItems.map((item) => (
             <li key={item}>
               <Link
                 href={linkMap[item]}
                 onClick={() => setOpen(false)}
-                className="block transition-colors duration-300 hover:text-[#6b3e26]"
+                className="block hover:text-[#6b3e26]"
               >
                 {item}
               </Link>
             </li>
           ))}
 
-          <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 inline-block text-center">
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-4 bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold text-center"
+          >
             CONTACT US ➚
           </Link>
         </ul>
       </div>
 
-      {/* SPACER */}
-      {!isHome && <div className="h-18" />}
-
+      {/* SPACER FOR NON-HOME */}
+      {!isHome && <div className="h-20" />}
     </>
   );
 };
