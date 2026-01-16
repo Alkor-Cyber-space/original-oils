@@ -2,7 +2,7 @@
 
 const AboutStory = () => {
   return (
-    <section className="bg-white px-6 md:px-16 py-24">
+    <section className="bg-white px-6 md:px-16 py-10">
       <div className="max-w-4xl mx-auto">
 
         <p className="text-xs tracking-widest text-gray-400 mb-4">

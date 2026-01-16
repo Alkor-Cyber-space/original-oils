@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <section className="bg-white px-6 md:px-16 flex flex-col pt-24">
+    <section className="bg-white px-6 md:px-16 flex flex-col pt-1">
       {/* TOP CONTENT */}
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* LEFT SIDE */}

@@ -4,7 +4,7 @@ export default function BlogPage() {
   return (
     <main>
       <TraditionJournal />
-      <ConnectSection />
+      {/* <ConnectSection /> */}
     </main>
   );
 }
