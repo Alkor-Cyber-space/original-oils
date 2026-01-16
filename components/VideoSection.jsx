@@ -13,20 +13,20 @@ const videos = [
 
 export default function VideoSection() {
   return (
-    <section className="px-6 md:px-20 py-20 bg-white -mt-6 md:-mt-12">
+    <section className="px-6 md:px-10 pb-10 bg-white ">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="mb-10">
+        <div className="mb-6">
           <p className="text-sm tracking-widest text-gray-500 uppercase">
             Videos
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-900 mt-2">
+          <h2 className="font-playfair text-4xl md:text-3xl text-gray-900 mt-2">
             Watch Our Journey
           </h2>
         </div>
 
         {/* Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 h-85">
           {videos.map((video) => (
             <Link
               key={video.id}

@@ -24,7 +24,7 @@ const fadeUp = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.16, 1, 0.3, 1], // premium easing
+      ease: [0.16, 1, 0.3, 1], 
     },
   },
 };
@@ -33,7 +33,6 @@ const Statistics = () => {
   return (
     <section className="w-full bg-[#f7f7f5] pt-20 pb-28 -mt-10 overflow-hidden">
       
-      {/* INNER CONTAINER */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -42,7 +41,6 @@ const Statistics = () => {
         className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 text-center"
       >
         
-        {/* Heading */}
         
 
         <motion.h2

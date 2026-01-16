@@ -12,13 +12,13 @@ export default function ProductsPage() {
               : products.filter(p => p.category.includes(activeCategory));
 
     return (
-        <main className="min-h-screen bg-white text-foreground px-8 pb-18 lg:px-8 ">
+        <main className="min-h-screen bg-white text-foreground px-8 py-18 lg:px-10 ">
 
             <div className="flex flex-col lg:flex-row justify-between items-start  relative ">
 
                 <div className="relative z-10 w-full">
                     <div className="flex flex-col gap-1 items-start">
-                        <div className="flex text-[#333333] text-sm tracking-widest gap-1">
+                        <div className="flex text-[#333333] text-md tracking-widest gap-1">
                             ★★★★★
                         </div>
                         <p className="text-[#666666] text-sm sm:ext-sm md:text-md font-kumbh tracking-wider">Pure Oils for Home Use</p>
@@ -32,7 +32,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div className=" absolute right-0 top-0 text-right max-w-125">
-                    <p className="text-[#666666] text-md  tracking-wide ">
+                    <p className="text-[#666666] text-md   tracking-wide ">
                         Products Our Customers <br /> Choose Again and Again
                     </p>
                 </div>

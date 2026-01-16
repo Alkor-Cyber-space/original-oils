@@ -23,12 +23,12 @@ export const products = [
             "Coconut oil is high in saturated fats, which means it's stable and doesn't appear to change quality during deep frying. This may make coconut oil a good choice for frying.",
         ],
         image: "/products/coconut-oil.jpg",
-        gallery: ["/products/cocoo.jpg", "/products/coconut-oil3.png", "/products/coconut-oil4.png","/products/frame.png"],
+        gallery: ["/products/coconut-oil2.png", "/products/cc.png", "/products/coconutOil3.png","/products/frame.png"],
     },
     {
         id: "badam-oil",
         title: "Badam Oil",
-        category: ["Body Oil", "Hair Oil"],
+        category: ["Body Oil"],
         price: "160.00",
         desc: "Badam Oil is a Heart-healthy monounsaturated fats, skin-nourishing vitamin E, and anti-inflammatory properties.",
         longDesc: "is a Heart-healthy monounsaturated fats, skin-nourishing vitamin E, and anti-inflammatory properties in a low-saturated fat package. Badham Oil is made from Prunus dulcis seeds, starting with harvest and processing, followed by extraction, refining, and meticulous packaging, we ensuring its purity and readiness for applications.    ",
@@ -45,7 +45,7 @@ export const products = [
             "Create a soothing massage experience by blending almond oil with your favorite essential oils. Enjoy the relaxing benefits and let the tension melt away.",
         ],
         image: "/products/badham-oil2.png",
-        gallery: ["/products/badhaam.jpg", "/products/test2.jpg", "/products/badhaam3.png","/products/frame.png"],
+        gallery: ["/products/baaadam.jpg", "/products/badaam4.png", "/products/mask.png","/products/frame.png"],
     },
     {
         id: "dhandha-pala-oil",
@@ -67,7 +67,7 @@ export const products = [
             "Danthapala leaves are very helpful in fighting malignant melanoma.",
         ],
         image: "/products/dandhapala-oil.jpg",
-        gallery: ["/products/dhandhapala2.jpg", "/about/oil-6.png"],
+        gallery: ["/products/dandhapala2.png", "/products/dandhapala3.png", "/products/dandhapala4.png", ],
     },
     {
         id: "black-cumin-seed-oil",
@@ -112,7 +112,7 @@ export const products = [
             "Using dental for strengthening teeth, gums, foil smell."
         ],
         image: "/products/Gingelly-Oil.png",
-        gallery: ["/products/Gingelly-Oil.png"],
+        gallery: ["/products/gingelly2.png","/products/gingelly3.png","/products/gingelly4.png", ],
     },
     {
         id: "chandra-mukhi-oil",
@@ -128,9 +128,9 @@ export const products = [
             "Soothing aroma",
         ],
         howToUse: [
-            "Apply to clean, dry skin.",
-            "Massage gently until absorbed.",
-            "Use daily for best results.",
+            "Generously apply the oil to your skin, massaging in circular motions. Pay special attention to dry areas for deep hydration.",
+            "Allow the body oil to be absorbed for a few minutes, promoting effective moisturization. Optionally, wrap treated areas for enhanced absorption.",
+            "Incorporate the oil into your regular skincare routine for holistic wellness and a sensory indulgence.",
         ],
         image: "/products/Chandra-Mukhi-Oil.png",
         gallery: ["/products/Chandra-Mukhi-Oil.png"],
@@ -141,18 +141,40 @@ export const products = [
         category: ["Body Oil"],
         price: "160.00",
         desc: "Chia seed oil, extracted from the seeds of the chia plant is a versatile product with various applications.",
-        longDesc: "Chia seed oil is extracted from the seeds of the chia plant. It is a versatile product with various applications in cooking and skincare.",
+        longDesc: " extracted from the seeds of the chia plant, is a versatile product with various applications. In skincare, it serves as a natural moisturizer and anti-aging agent due to its rich content of omega-3 fatty acids and antioxidants.Additionally, chia seed oil can be applied to hair for deep conditioning, contributing to improved shine and manageability, while also promoting scalp health.chia seed oil can be consumed as a dietary supplement. Rich in essential fatty acids Chia seed oil is made by harvesting chia seeds from the Salvia hispanica plant, cleaning and drying them, and then subjecting them to cold-press extraction, a process that mechanically presses the seeds to obtain the oil while preserving its nutritional benefits. The extracted oil undergoes filtration to remove impurities before being bottled for consumption or cosmetic use.",
         keyBenefits: [
             "Rich in Omega-3 fatty acids",
             "Improves skin hydration",
             "Supports heart health",
         ],
-        howToUse: [
-            "Add to smoothies or salads.",
-            "Apply topically to skin for hydration.",
-        ],
+        howToUse: {
+  type: "detailed",
+  sections: [
+    {
+      title: "Application for Skincare",
+      description:
+        "After cleansing your face, apply a few drops of chia seed oil to your fingertips and gently massage it into your skin.Allow the oil to absorb before applying other products or makeup. This can be done once or twice daily for a radiant and moisturized complexion."
+    },
+    {
+      title: "Hair and Scalp Treatment",
+      description:
+        "Apply it to your scalp and massage. Extend the application to the lengths of your hair. Leave the oil on for at least an hour, or preferably overnight, before shampooing as usual. This helps nourish the scalp, improve hair texture, and enhance overall hair health."
+    },
+    {
+      title: "Dietary Incorporation",
+      description:
+        "Add a teaspoon of chia seed oil to your smoothies, salad dressings, or other dishes. Start with small amounts, gradually adjusting based on your taste preferences.This dietary inclusion provides a convenient way to benefit from the oil's omega-3 fatty acids and other nutrients."
+    },
+    {
+      title: "Hydration Booster",
+      description:
+        "To boost your overall hydration, consider adding a drop or two of chia seed oil to your regular moisturizer or body lotion. Mix well and apply it to your skin as usual. This method ensures that your skin receives an extra dose of moisture, leaving it soft and supple."
+    }
+  ]
+}
+,
         image: "/products/Chia-Seed-Oil.png",
-        gallery: ["/products/Chia-Seed-Oil.png"],
+        gallery: ["/products/Chia-Seed2.png", "/products/Chia-Seed3.png", "/products/Chia-Seed4.png"],
     },
     {
         id: "ylangi-hair-oil",
@@ -171,8 +193,8 @@ export const products = [
             "Massage gently.",
             "Leave on for at least 30 minutes before washing.",
         ],
-        image: "/products/Mustard-Oil.png",
-        gallery: ["/products/ylangi-hair-oil.jpg"],
+        image: "/products/ylangi-Oil.png",
+        gallery: ["/products/ylangi2.png", "/products/ylangi3.png", "/products/ylangi4.png"],
     },
     {
         id: "kesakala-hair-oil",
@@ -192,27 +214,27 @@ export const products = [
             "Leave overnight for best results.",
         ],
         image: "/products/Kesakala-Hair-Oil.png",
-        gallery: ["/products/Kesakala-Hair-Oil.png"],
+        gallery: ["/products/Kesakala2.png", "/products/Kesakala3.png", "/products/Kesakala4.png"],
     },
-    {
-        id: "mustard-oil",
-        title: "Mustard oil",
-        category: ["Edible Oil"],
-        price: "160.00",
-        desc: "Mustard oil, which is produced from the seeds of the mustard plant, is a common ingredient in Indian cuisine.",
-        longDesc: "Chia seed oil is extracted from the seeds of the chia plant. It is a versatile product with various applications in cooking and skincare.",
-        keyBenefits: [
-            "Rich in Omega-3 fatty acids",
-            "Improves skin hydration",
-            "Supports heart health",
-        ],
-        howToUse: [
-            "Add to smoothies or salads.",
-            "Apply topically to skin for hydration.",
-        ],
-        image: "/products/Mustard-Oil.png",
-        gallery: ["/products/Mustard-Oil.png"],
-    },
+    // {
+    //     id: "mustard-oil",
+    //     title: "Mustard oil",
+    //     category: ["Edible Oil"],
+    //     price: "160.00",
+    //     desc: "Mustard oil, which is produced from the seeds of the mustard plant, is a common ingredient in Indian cuisine.",
+    //     longDesc: "Chia seed oil is extracted from the seeds of the chia plant. It is a versatile product with various applications in cooking and skincare.",
+    //     keyBenefits: [
+    //         "Rich in Omega-3 fatty acids",
+    //         "Improves skin hydration",
+    //         "Supports heart health",
+    //     ],
+    //     howToUse: [
+    //         "Add to smoothies or salads.",
+    //         "Apply topically to skin for hydration.",
+    //     ],
+    //     image: "/products/Mustard-Oil.png",
+    //     gallery: ["/products/Mustard-Oil.png"],
+    // },
     {
         id: "flax-seed-Oil",
         title: "Flax Seed Oil",
@@ -226,12 +248,15 @@ export const products = [
             "Natural ingredients",
         ],
         howToUse: [
-            "Apply to scalp and hair.",
-            "Massage gently.",
-            "Leave on for at least 30 minutes before washing.",
+            "Consume 1-2 tablespoons daily for omega-3 intake.",
+            "Blend into smoothies or drizzle over salads.",
+            "Use as a dressing for cold dishes to preserve nutrients.",
+            "Avoid heating at high temperatures to maintain its integrity.",
+            "Apply topically for skin moisturization.Massage into the scalp or add to hair masks for added shine.",
+            "Add to yogurt or oatmeal for a nutritional boost.Consult a healthcare professional for personalized usage advice."
         ],
         image: "/products/Flax-Seed-Oil.png",
-        gallery: ["/products/Flax-Seed-Oil.png"]
+        gallery: ["/products/Flax-Seed2.png", "/products/Flax-Seed3.png", "/products/Flax-Seed4.png"]
 
     },
     {
@@ -242,9 +267,9 @@ export const products = [
         desc: "Coco Rosemary Oil blends traditional coconut oil with rosemary to support stronger hair, healthier roots, and a naturally refreshed scalp.",
         longDesc: "Kesakala Hair Oil is a specialized formula for hair care. It combines traditional ingredients to support strong and healthy hair.",
         keyBenefits: [
-            "Strengthens hair",
-            "Reduces hair fall",
-            "Promotes scalp health",
+            "Promotes hair growth by improving blood circulation to the scalp.",
+            "Reduces hair fall and helps strengthen hair roots.",
+            "Adds shine & thickness to dull, lifeless hair",
         ],
         howToUse: [
             "Apply generously to scalp.",
@@ -252,6 +277,6 @@ export const products = [
             "Leave overnight for best results.",
         ],
         image: "/products/Coco-Rosemary-Oil.png",
-        gallery: ["/products/Coco-Rosemary-Oil.png"],
+        gallery: ["/products/rosemary2.png", "/products/rosemary3.png", "/products/rosemary4.png"],
     },
 ]

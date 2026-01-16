@@ -72,10 +72,12 @@ const Navbar = () => {
 
           {/* ✅ LOGO — ALWAYS visible on MOBILE */}
           <Link href="/" onClick={() => setOpen(false)}>
+
             {(!isDesktop ||
               (isHome
                 ? (!showFullNavbar && isDesktop)
                 : scrolled && isDesktop)) && (
+
               <Image
                 src="/logo.png"
                 alt="Original Oils Logo"
@@ -87,6 +89,8 @@ const Navbar = () => {
             )}
           </Link>
 
+
+
           {/* ================= DESKTOP NAV ================= */}
           {(showFullNavbar || (!isHome && isDesktop && !scrolled)) && (
             <>
@@ -97,6 +101,7 @@ const Navbar = () => {
                   gap-8 text-sm font-medium
                   ${textColor}
                 `}
+
               >
                 {navItems.map((item) => (
                   <li key={item} className="relative group">

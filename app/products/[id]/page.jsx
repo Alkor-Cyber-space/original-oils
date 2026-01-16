@@ -34,7 +34,7 @@ export default async function ProductDetailPage({ params }) {
     }
 
     return (
-        <main>
+        <main className="pt-18">
             <ProductDetail product={product} />
             <ConnectSection />
         </main>

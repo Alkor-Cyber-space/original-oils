@@ -30,6 +30,44 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+.scrollbar-webkit::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-webkit::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-webkit::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  /* gray-300 matches border */
+  border-radius: 20px;
+}
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
 
 html {
   scroll-behavior: smooth;

@@ -48,15 +48,18 @@ export default async function BlogDetailPage({ params }) {
   if (!blog) return <p className="p-10">Blog not found</p>;
 
   return (
-    <section className="bg-white pt-1 pb-24 px-4">
-      <div className="max-w-5xl mx-auto">
 
-        {/* Image + Title */}
-        <div className="relative h-[260px] sm:h-[320px] md:h-[420px] rounded-2xl overflow-hidden bg-black">
+    <section className="bg-white py-16 ">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-8 sm:max-w-4xl md:max-w-7xl">
+
+        <div className="relative max-w-5xl h-107.5 rounded-2xl overflow-hidden bg-black mx-auto">
+
+
           <Image
             src={blog.image}
             alt={blog.title}
             fill
+
             className={`
               object-contain
               ${
@@ -71,6 +74,7 @@ export default async function BlogDetailPage({ params }) {
 
           <div className="absolute inset-0 bg-black/40" />
           <h1 className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-serif text-center px-6">
+
             {blog.title}
           </h1>
         </div>

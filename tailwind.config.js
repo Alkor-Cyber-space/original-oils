@@ -20,6 +20,6 @@ module.exports = {
     },
   },
   // tailwind.config.js
-plugins: [require('@tailwindcss/line-clamp')],
+plugins: [],
 
 };

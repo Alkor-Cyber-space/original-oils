@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function GalleryPage() {
   return (
-    <main>
+    <main className="border-2 border-black">
       <GallerySection2 />
       <VideoSection />
       <ConnectSection />
