@@ -14,7 +14,7 @@ const images = [
 
 export default function GallerySection2() {
   return (
-    <section id="gallery" className="bg-white px-6 md:px-20 py-24 scroll-mt-28">
+    <section id="gallery" className="bg-white px-6 md:px-20 py-1 scroll-mt-28">
       {/* HEADER */}
       <div className="max-w-7xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-2">

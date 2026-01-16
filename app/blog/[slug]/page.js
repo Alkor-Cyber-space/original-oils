@@ -15,7 +15,7 @@ const blogData = [
   {
     slug: "my-journey-with-hair-fall-after-delivery",
     title: "My Journey with Hair Fall After Delivery",
-    image: "/journal2.png",
+    image: "/blogs/journal2.png",
     content: [
       "After my delivery, my life changed in many ways. Along with taking care of my baby, I also started noticing a big change in my hair. At first, the hair fall was small, so I ignored it. Everyone around me said post-delivery hair fall is common and will stop soon.",
       "But slowly, it became worse. Every time I washed my hair, a lot of hair fell out. I felt scared to comb my hair because the comb would be full of broken strands. My hair became thin, weak, and lifeless. Even tying my hair felt painful.",
@@ -23,13 +23,13 @@ const blogData = [
       "I started using the oil twice a week. I applied it slowly and massaged my scalp gently. The oil felt very calming and light. It didn’t burn or itch, which was important for my sensitive scalp",
       "After about two weeks, my scalp felt healthier. It was less dry, and the hair fall slowly reduced. It didn’t stop suddenly, but it became less frightening.",
       "After two months, I noticed small new hairs growing near my hairline. That moment gave me hope and happiness. I finally felt like things were getting better.",
-      "This oil helped me during one of the most emotional phases of my life. It gave me confidence, patience, and care when I needed it the most"
+      "This oil helped me during one of the most emotional phases of my life. It gave me confidence, patience, and care when I needed it the most."
     ],
   },
   {
     slug: "from-my-grandmother-to-my-daughter",
     title: "From My Grandmother to My Daughter",
-    image: "/journal3.png",
+    image: "/blogs/journal3.png",
     content: [
       "Some memories stay with us forever. For me, it is the pure smell of coconut oil from a traditional oil mill.",
       "When I was a child, I used to go with my grandmother to buy coconut oil and badam oil. The shop was simple, but the smell of fresh oil filled the air. That smell was pure and comforting. My grandmother trusted the mill because the quality was honest and natural.",
@@ -42,35 +42,41 @@ const blogData = [
 ];
 
 export default async function BlogDetailPage({ params }) {
-  // ✅ THIS IS THE KEY LINE
   const { slug } = await params;
-
   const blog = blogData.find((b) => b.slug === slug);
 
-  if (!blog) {
-    return <p className="p-10">Blog not found</p>;
-  }
+  if (!blog) return <p className="p-10">Blog not found</p>;
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white pt-1 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
 
         {/* Image + Title */}
-        <div className="relative h-[420px] rounded-2xl overflow-hidden bg-black">
+        <div className="relative h-[260px] sm:h-[320px] md:h-[420px] rounded-2xl overflow-hidden bg-black">
           <Image
             src={blog.image}
             alt={blog.title}
             fill
-    className="object-contain scale-[1.70]"
+            className={`
+              object-contain
+              ${
+                blog.slug === "my-journey-with-hair-fall-after-delivery"
+                  ? "scale-[1.55] sm:scale-[1.45] md:scale-[1.7] object-center sm:object-bottom md:object-bottom"
+                  : blog.slug === "from-my-grandmother-to-my-daughter"
+                  ? "scale-[1.6] sm:scale-[1.45] md:scale-[1.7] object-center sm:object-bottom md:object-bottom md:translate-y-24"
+                  : "scale-[1.25] sm:scale-[1.45] md:scale-[1.7] object-center"
+              }
+            `}
           />
+
           <div className="absolute inset-0 bg-black/40" />
-          <h1 className="absolute inset-0 flex items-center justify-center text-white text-3xl md:text-4xl font-serif text-center px-6">
+          <h1 className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-serif text-center px-6">
             {blog.title}
           </h1>
         </div>
 
         {/* Content */}
-        <article className="mt-10 space-y-6 text-gray-700 leading-relaxed">
+        <article className="mt-8 sm:mt-10 space-y-5 sm:space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
           {blog.content.map((para, index) => (
             <p key={index}>{para}</p>
           ))}
