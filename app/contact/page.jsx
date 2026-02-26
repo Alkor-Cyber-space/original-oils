@@ -119,21 +119,35 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-1 pt-3">
                     <div className="lg:col-span-4 relative flex flex-col ">
                         {/* CONTACT DETAILS */}
-                        <div className="space-y-5 pl-2 lg:pl-6 z-20 relative">
+                        <div className="space-y-3 pl-2 lg:pl-6 z-20 relative">
                             <div>
-                                <h3 className="text-2xl font-medium text-[#333333] mb-1">Contact Us</h3>
-                                <a href="mailto:info@originaloils.org" className="text-gray-500 text-lg border-b border-gray-400 pb-0.5 hover:text-black transition-colors">
+                                <h3 className="text-2xl font-small text-[#333333] mb-1">Contact Us</h3>
+                                <a href="mailto:info@originaloils.org" className="text-gray-500 text-md border-b border-gray-400  hover:text-black transition-colors">
                                     info@originaloils.org
                                 </a>
                             </div>
-
                             <div>
-                                <h3 className="text-2xl font-medium text-[#333333] mb-1">Call Us</h3>
-                                <a href="tel:+918078112788" className="text-gray-500 text-lg tracking-wide hover:text-black transition-colors">+91 8078112788</a>
+                            <h3 className="text-2xl font-small text-[#333333] mb-1">
+                                Amazon Store
+                            </h3>
+
+                            <a
+                                href="https://www.amazon.in/stores/ArtisansOriginalOils/page/5ADBAB2B-9076-425E-862A-71825817EC6E"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-500 text-md border-b border-gray-400  hover:text-black transition-colors break-words"
+                            >
+                                Visit Our Amazon Store
+                            </a>
                             </div>
 
                             <div>
-                                <h3 className="text-2xl font-medium text-[#333333] mb-4">Social Media</h3>
+                                <h3 className="text-2xl font-small text-[#333333] mb-1">Call Us</h3>
+                                <a href="tel:+918078112788" className="text-gray-500 text-md tracking-wide hover:text-black transition-colors">+91 8078112788</a>
+                            </div>
+
+                            <div>
+                                <h3 className="text-2xl font-small text-[#333333] mb-1">Social Media</h3>
                                 <div className="flex gap-4">
                                     <a href="https://www.instagram.com/_originaloils/" target="_blank" rel="noopener noreferrer">
                                         <SocialIcon type="instagram" />
