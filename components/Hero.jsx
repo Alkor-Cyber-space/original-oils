@@ -24,7 +24,7 @@ const Hero = () => {
          pb-0 sm:pb-0 md:pb-20 lg:pb-20
         items-center text-white
         relative overflow-hidden
-        pt-24 md:pt-28
+        pt-24 md:pt-28 lg:pt-34
         -mt-8
       "
     >
