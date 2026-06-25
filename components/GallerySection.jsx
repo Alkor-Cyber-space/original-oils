@@ -12,15 +12,15 @@ const images = [
 ];
 
 export default function GallerySection() {
-const x = useMotionValue(0);
-const y = useMotionValue(0);
-const [isHovered, setIsHovered] = useState(false);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-const handleMouseMove = (e) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  x.set(e.clientX - rect.left);
-  y.set(e.clientY - rect.top);
-};
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(e.clientX - rect.left);
+    y.set(e.clientY - rect.top);
+  };
 
 
   return (
@@ -71,30 +71,30 @@ const handleMouseMove = (e) => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               whileHover={{ scale: 1.04 }}
-transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
 
               whileTap={{ scale: 0.95 }}
               className="group relative px-10 py-3.5 overflow-hidden rounded-full border border-[#1a1a1a] text-sm font-bold uppercase tracking-widest text-[#1a1a1a] transition-colors duration-300"
             >
-             <motion.span
-  className="absolute bg-[#1a1a1a] rounded-full pointer-events-none"
-  initial={false}
-  animate={isHovered ? {
-    width: 300,
-    height: 300,
-    transition: { duration: 0.5, ease: "easeOut" }
-  } : {
-    width: 0,
-    height: 0,
-    transition: { duration: 0.3, ease: "easeIn" }
-  }}
-  style={{
-    x,
-    y,
-    translateX: "-50%",
-    translateY: "-50%",
-  }}
-/>
+              <motion.span
+                className="absolute bg-[#1a1a1a] rounded-full pointer-events-none"
+                initial={false}
+                animate={isHovered ? {
+                  width: 300,
+                  height: 300,
+                  transition: { duration: 0.5, ease: "easeOut" }
+                } : {
+                  width: 0,
+                  height: 0,
+                  transition: { duration: 0.3, ease: "easeIn" }
+                }}
+                style={{
+                  x,
+                  y,
+                  translateX: "-50%",
+                  translateY: "-50%",
+                }}
+              />
 
               <span className={`relative transition-colors duration-300 ${isHovered ? 'text-white' : 'text-[#1a1a1a]'}`}>
                 View Collection

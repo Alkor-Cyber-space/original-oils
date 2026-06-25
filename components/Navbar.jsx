@@ -32,7 +32,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
+      setIsDesktop(window.innerWidth >= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -88,7 +88,7 @@ const Navbar = () => {
             <>
               <ul
                 className={`
-                  hidden md:flex
+                  hidden lg:flex
                   absolute left-1/2 -translate-x-1/2
                   gap-8 text-sm font-medium
                   ${textColor}
@@ -121,7 +121,7 @@ const Navbar = () => {
                 })}
               </ul>
 
-              <div className="hidden md:flex">
+              <div className="hidden lg:flex">
                 <Link
                   href="/contact"
                   className="bg-darkBrown text-white px-6 py-2 rounded-full text-sm font-semibold transition hover:scale-105 hover:shadow-lg"

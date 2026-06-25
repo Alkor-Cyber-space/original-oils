@@ -104,15 +104,21 @@ export default function ContactSection() {
 
                             <div>
                                 <h3 className="text-2xl font-medium text-[#333333] mb-1">Call Us</h3>
-                                <p className="text-gray-500 text-lg tracking-wide">+91 8078112788</p>
+                                <a href="tel:+918078112788" className="text-gray-500 text-lg tracking-wide hover:text-black transition-colors">+91 8078112788</a>
                             </div>
 
                             <div>
                                 <h3 className="text-2xl font-medium text-[#333333] mb-4">Social Media</h3>
                                 <div className="flex gap-4">
-                                    <SocialIcon type="instagram" />
-                                    <SocialIcon type="facebook" />
-                                    <SocialIcon type="whatsapp" />
+                                    <a href="https://www.instagram.com/_originaloils/" target="_blank" rel="noopener noreferrer">
+                                        <SocialIcon type="instagram" />
+                                    </a>
+                                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                        <SocialIcon type="facebook" />
+                                    </a>
+                                    <a href="https://wa.me/918078112788" target="_blank" rel="noopener noreferrer">
+                                        <SocialIcon type="whatsapp" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
