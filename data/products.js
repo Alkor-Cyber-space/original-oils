@@ -1,6 +1,5 @@
 export const categories = ["All Products", "Body Oil", "Edible Oil", "Hair Oil", "Essential Oil"];
 
-
 export const products = [
     {
         id: "coconut-oil",
