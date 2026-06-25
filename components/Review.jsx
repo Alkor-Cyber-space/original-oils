@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const reviews = [
-     {
+    {
         id: 1,
         name: "Swetha",
         role: "Customer",
@@ -11,16 +11,16 @@ const reviews = [
         quote: "A big fan of their hair oils. It's made with edible-quality oils, and that makes a difference.",
         stars: 5,
     },
-    
+
     {
         id: 2,
         name: "Sana",
         role: "Customer",
-        image: "/avatar2.jpeg", 
+        image: "/avatar2.jpeg",
         quote: "I am a big fan of their hair oils, made from edible-quality oils — and that makes the difference.",
         stars: 5,
     },
-   {
+    {
         id: 3,
         name: "Anusree",
         role: "Customer",

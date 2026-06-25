@@ -7,76 +7,76 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
 export default function OilsSection() {
-const imagesRef = useRef([]);
+  const imagesRef = useRef([]);
 
-useEffect(() => {
-  if (typeof window === "undefined") return;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  //  Ensure everything is visible immediately
-  gsap.set(imagesRef.current, {
-    y: 0,
-    opacity: 1,
-  });
-
-  imagesRef.current.forEach((img) => {
-    if (!img) return;
-
-    gsap.to(img, {
-      y: -50, 
-      ease: "none",
-      scrollTrigger: {
-        trigger: img,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.4,
-        invalidateOnRefresh: true,
-      },
+    //  Ensure everything is visible immediately
+    gsap.set(imagesRef.current, {
+      y: 0,
+      opacity: 1,
     });
-  });
 
-  ScrollTrigger.refresh();
-}, []);
+    imagesRef.current.forEach((img) => {
+      if (!img) return;
+
+      gsap.to(img, {
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: img,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.4,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+
+    ScrollTrigger.refresh();
+  }, []);
 
   const products = [
-  {
-    title: "Coconut Oil",
-    slug: "coconut-oil",
-    desc: "Coconut oil has many nutrients that can contribute to your health and a good diet.",
-    img: "/immage.png",
-  },
-  {
-    title: "Black cumin seed oil",
-    slug: "black-cumin-seed-oil",
-    desc: "Black seed oil is high in antioxidants and may have several benefits for health.",
-    img: "/black-seed.jpg",
-  },
-  {
-    title: "Badam oil",
-    slug: "badam-oil",
-    desc: "Badam Oil is a heart-healthy oil rich in vitamin E and anti-inflammatory properties.",
-    img: "/badam.jpg",
-  },
-  {
-    title: "Dhandapala Dandruff Oil",
-    slug: "dhandha-pala-oil",
-    desc: "Dhandapala Dandruff Oil is made from shwetha kutaja leaves and coconut oil has high therapeutic benefits.",
-    img: "/Danthapala.jpg",
-  },
-  {
-    title: "Chandra Mukhi Oil",
-    slug: "chandra-mukhi-oil",
-    desc: "Chandramukhi Oil, a radiant blend of elegance and wellness, combines a host of natural ingredients.",
-    img: "/Chandra Mukhi.jpg",
-  },
-  {
-    title: "Kesakala Hair Oil",
-    slug: "kesakala-hair-oil",
-    desc: "Kesakala Hair Oil, a radiant blend of elegance and wellness, combines a host of natural ingredients",
-    img: "/aboutt.png",
-  },
-];
+    {
+      title: "Coconut Oil",
+      slug: "coconut-oil",
+      desc: "Coconut oil has many nutrients that can contribute to your health and a good diet.",
+      img: "/immage.png",
+    },
+    {
+      title: "Black cumin seed oil",
+      slug: "black-cumin-seed-oil",
+      desc: "Black seed oil is high in antioxidants and may have several benefits for health.",
+      img: "/black-seed.jpg",
+    },
+    {
+      title: "Badam oil",
+      slug: "badam-oil",
+      desc: "Badam Oil is a heart-healthy oil rich in vitamin E and anti-inflammatory properties.",
+      img: "/badam.jpg",
+    },
+    {
+      title: "Dhandapala Dandruff Oil",
+      slug: "dhandha-pala-oil",
+      desc: "Dhandapala Dandruff Oil is made from shwetha kutaja leaves and coconut oil has high therapeutic benefits.",
+      img: "/Danthapala.jpg",
+    },
+    {
+      title: "Chandra Mukhi Oil",
+      slug: "chandra-mukhi-oil",
+      desc: "Chandramukhi Oil, a radiant blend of elegance and wellness, combines a host of natural ingredients.",
+      img: "/Chandra Mukhi.jpg",
+    },
+    {
+      title: "Kesakala Hair Oil",
+      slug: "kesakala-hair-oil",
+      desc: "Kesakala Hair Oil, a radiant blend of elegance and wellness, combines a host of natural ingredients",
+      img: "/aboutt.png",
+    },
+  ];
 
 
   return (
@@ -163,15 +163,15 @@ useEffect(() => {
                     {product.desc}
                   </p>
 
-                 <Link
-  href={`/products/${product.slug}`}
-  className="mt-2 text-xs sm:text-xs lg:text-xl text-gray-700 hover:text-black flex items-center gap-1 transition group"
->
-  View details
-  <span className="transition-transform duration-300 group-hover:translate-x-1">
-    →
-  </span>
-</Link>
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className="mt-2 text-xs sm:text-xs lg:text-xl text-gray-700 hover:text-black flex items-center gap-1 transition group"
+                  >
+                    View details
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
 
                 </div>
               </div>

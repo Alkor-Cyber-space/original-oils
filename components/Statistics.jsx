@@ -31,7 +31,7 @@ const fadeUp = {
 
 const Statistics = () => {
   return (
-    <section className="w-full bg-[#f7f7f5] pt-18 pb-18 -mt-10 overflow-hidden">
+    <section className="bg-[#f7f7f5] pt-18 pb-18 overflow-hidden">
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -40,8 +40,6 @@ const Statistics = () => {
         transition={{ duration: 1 }}
         className="max-w-350 mx-auto px-6 md:px-12 lg:px-20 text-center"
       >
-
-
 
         <motion.h2
           variants={fadeUp}
@@ -71,7 +69,7 @@ const Statistics = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 items-center"
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 items-center"
         >
           {[
             { src: "/frame.jpeg", alt: "Founder" },
@@ -84,8 +82,7 @@ const Statistics = () => {
               variants={fadeUp}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative w-full h-[290px] flex items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
-            >
+className="relative w-full h-[120px] sm:h-[120px] md:h-[160px] lg:h-[285px] flex items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <img
                 src={item.src}
                 alt={item.alt}

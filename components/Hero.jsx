@@ -24,31 +24,30 @@ const Hero = () => {
          pb-0 sm:pb-0 md:pb-20 lg:pb-20
         items-center text-white
         relative overflow-hidden
-        pt-24 md:pt-28
-        -mt-8
+        pt-24 sm:pt-24 md:pt-28 lg:pt-8
       "
     >
       {/* HERO LOGO */}
-      <div className="absolute hidden sm:block md:block lg:block top-10 md:top-9 lg:top-15 left-4 md:left-12 z-30">
+      <div className="absolute hidden lg:block top-10 lg:top-5 left-4 md:left-12 z-30">
         <Link href="/">
           <Image
             src="/logo2.png"
             alt="Original Oils Logo"
             width={255}
             height={90}
-            priority
-            className="w-[160px] sm:w-[150px] md:w-[140px] lg:w-[190px] object-contain"
+            // priority
+            className="w-[160px] sm:w-[150px] md:w-[140px] lg:w-[170px] object-contain"
           />
         </Link>
       </div>
 
       {/* Left Section */}
-      <div className="z-20  text-left md:text-left">
+      <div className="z-20 text-left md:text-left">
 
         <h1 className="font-playfair leading-none text-shadow-[0_4px_12px_rgba(0,0,0,0.35)] md:whitespace-nowrap">
 
           {/* MOBILE VIEW */}
-          <span className="block md:hidden text-md sm:text-md lg:text-2xl font-normal">
+          <span className="block md:hidden text-md sm:text-md lg:text-2xl font-normal mt-2">
             <span className="text-[3.9rem] font-extrabold">60</span>{" "}
             years in
           </span>
@@ -57,8 +56,8 @@ const Hero = () => {
           </span>
 
           {/* DESKTOP VIEW — YOUR ORIGINAL STYLE */}
-          <span className="hidden md:inline font-bold text-[6.5rem]">60&nbsp;</span>
-          <span className="hidden md:inline font-normal text-[4.5rem]">
+          <span className="hidden md:inline font-bold text-[4.5rem] lg:text-[6.5rem]">60&nbsp;</span>
+          <span className="hidden md:inline font-normal text-[3rem] lg:text-[4.5rem]">
             years in
             <br />
             oil milling Industry.
@@ -66,17 +65,15 @@ const Hero = () => {
 
         </h1>
 
-
-
-        <div className="max-w-7xl md:mx-0 mt-5">
+        <div className="max-w-7xl md:mx-0 mt-4">
           <p
             className="relative z-30
               
               text-xs sm:text-xs md:text-md lg:text-3xl  
               font-medium
-              tracking-widest
-              text-white/85
-              text-shadow-[0_3px_7px_rgba(0,0,0,0.5)]
+              tracking-wide
+              text-white
+              text-shadow-md
               
             "
           >
@@ -85,12 +82,11 @@ const Hero = () => {
 
           <p
             className="
-              mt-5
+              mt-3
               font-serif
-              text-sm sm:text-sm md:tetx-lg lg:text-3xl
-              leading-relaxed
+              text-sm sm:text-sm md:text-lg lg:text-3xl
+              leading-snug
               font-semibold
-              tracking-wide
               text-white
               text-shadow-[0_4px_10px_rgba(0,0,0,0.4)]
             "
@@ -129,7 +125,7 @@ const Hero = () => {
                   top: mousePos.y,
                   translateX: "-50%",
                   translateY: "-50%",
-                  filter: "blur(12px)",
+                  // filter: "blur(12px)",
                 }}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{
@@ -154,8 +150,8 @@ const Hero = () => {
       </div>
 
       {/* Right Section */}
-      <div className="relative h-[35vh] sm:h-[40vh] md:h-[90vh] flex items-end justify-end md:justify-end z-20 ">
-        <div className="relative w-full max-w-[330px] sm:max-w-[330px] md:max-w-[380px] lg:max-w-[580px] z-40 ">
+      <div className="relative h-[25vh] sm:h-[30vh] md:h-[40vh] lg:h-[95vh] flex items-end justify-end md:justify-end z-20 ">
+        <div className="relative w-full max-w-[300px] sm:max-w-[330px] md:max-w-[300px] lg:max-w-[500px] z-40 ">
           <Image
             src="/hero-bg.png"
             alt="Coconut Oil Bottle"
@@ -169,14 +165,14 @@ const Hero = () => {
       </div>
 
       {/* TORN PAPER — SAME POSITION */}
-      <div className="absolute bottom-9 md:bottom-6 left-0 w-full h-76 sm:h-76 md:h-72 lg:h-110 z-10 overflow-hidden">
+      <div className="absolute -bottom-1 left-0 w-full z-10 overflow-hidden pointer-events-none">
         <Image
           src="/paper.png"
-          alt="torn edge"
-          fill
-          priority
+          width={1920}
+          height={400}
           sizes="100vw"
-          className="object-cover object-top"
+          className="w-full h-auto block object-cover"
+          alt="Torn Paper Background"
         />
       </div>
     </section>

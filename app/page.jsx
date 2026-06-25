@@ -14,7 +14,7 @@ import Review from "@/components/Review"
 export default function HomePage() {
   return (
     <>
-      <section className="bg-primary min-h-screen ">
+      <section className="bg-primary  ">
         <Hero />
         <Statistics />
       </section>
