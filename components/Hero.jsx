@@ -25,6 +25,7 @@ const Hero = () => {
         items-center text-white
         relative overflow-hidden
         pt-24 sm:pt-24 md:pt-28 lg:pt-8
+
       "
     >
       {/* HERO LOGO */}

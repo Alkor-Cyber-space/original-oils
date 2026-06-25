@@ -2,7 +2,6 @@ export const categories = ["All Products", "Body Oil", "Edible Oil", "Hair Oil",
 
 export const products = [
     {
-        
         id: "coconut-oil",
         title: "Coconut Oil",
         category: ["Edible Oil"],
@@ -34,11 +33,12 @@ export const products = [
         desc: "Badam Oil is a Heart-healthy monounsaturated fats, skin-nourishing vitamin E, and anti-inflammatory properties.",
         longDesc: "is a Heart-healthy monounsaturated fats, skin-nourishing vitamin E, and anti-inflammatory properties in a low-saturated fat package. Badham Oil is made from Prunus dulcis seeds, starting with harvest and processing, followed by extraction, refining, and meticulous packaging, we ensuring its purity and readiness for applications.    ",
         keyBenefits: [
-            "Improves Immunity",
-            "Promptes Growth",
-            "Nourishes Skin",
-            "Helps to Digestion",
-            "Provide Glow"
+            "Anti-Aging Effects",
+            "Acnce Management",
+            "Deep Moisturization",
+            "Improved Complexion and Tone",
+            "Promotes Scalp Health",
+            "Reduces Dark Circles and Stretch Marks"
         ],
         howToUse: [
             "Pamper your skin by applying a few drops of almond oil to damp skin. Gently massage to lock in moisture, leaving your skin hydrated and supple.",
