@@ -20,7 +20,7 @@ export default function HomePage() {
       </section>
        {/* <AboutSection /> */}
        <OilsSection /> 
-      {/* <HandpickedSection /> */}
+       <HandpickedSection /> 
       {/* <CraftSection /> */}
       {/* <GallerySection /> */}
       {/* <TraditionJournal /> */}
