@@ -21,7 +21,7 @@ export default function HomePage() {
        {/* <AboutSection /> */}
        <OilsSection /> 
        <HandpickedSection /> 
-      {/* <CraftSection /> */}
+       <CraftSection /> 
       {/* <GallerySection /> */}
       {/* <TraditionJournal /> */}
       {/* <Review />  */}
