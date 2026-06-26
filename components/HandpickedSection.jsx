@@ -42,7 +42,7 @@ const HandpickedSection = () => {
         </p>
 
         <h2 className="mt-2 font-serif text-4xl md:text-5xl text-gray-800 leading-tight">
-          Handpicked <br /> for Your Ritual
+          Handpicked <br /> For Your Ritual
         </h2>
 
         <p className="mt-2 text-gray-500 text-sm leading-relaxed">
