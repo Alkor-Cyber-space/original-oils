@@ -22,7 +22,7 @@ export default function HomePage() {
        <OilsSection /> 
        <HandpickedSection /> 
        <CraftSection /> 
-      {/* <GallerySection /> */}
+       <GallerySection /> 
       {/* <TraditionJournal /> */}
       {/* <Review />  */}
 
