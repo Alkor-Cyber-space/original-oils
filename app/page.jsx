@@ -18,8 +18,8 @@ export default function HomePage() {
         <Hero />
          <Statistics /> 
       </section>
-       <AboutSection />
-      {/* <OilsSection /> */}
+       {/* <AboutSection /> */}
+       <OilsSection /> 
       {/* <HandpickedSection /> */}
       {/* <CraftSection /> */}
       {/* <GallerySection /> */}
