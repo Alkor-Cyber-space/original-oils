@@ -23,8 +23,8 @@ export default function HomePage() {
        <HandpickedSection /> 
        <CraftSection /> 
        <GallerySection /> 
-      {/* <TraditionJournal /> */}
-      {/* <Review />  */}
+       <TraditionJournal /> 
+       <Review /> 
 
       {/* <Testimonials /> */}
       {/* <ConnectSection /> */}
