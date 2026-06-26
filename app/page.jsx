@@ -18,13 +18,13 @@ export default function HomePage() {
         <Hero />
          <Statistics /> 
       </section>
-      {/* <AboutSection />
-      <OilsSection />
-      <HandpickedSection />
-      <CraftSection />
-      <GallerySection />
-      <TraditionJournal />
-      <Review /> */}
+       <AboutSection />
+      {/* <OilsSection /> */}
+      {/* <HandpickedSection /> */}
+      {/* <CraftSection /> */}
+      {/* <GallerySection /> */}
+      {/* <TraditionJournal /> */}
+      {/* <Review />  */}
 
       {/* <Testimonials /> */}
       {/* <ConnectSection /> */}
