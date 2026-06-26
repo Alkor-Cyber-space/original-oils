@@ -17,56 +17,83 @@ const AboutSection = () => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=300%",
-          scrub: 1,
-          pin: true,
-        },
-      });
-
-      tl.fromTo(
+      // 1. Scale the white card as the section enters the viewport (applies to both desktop and mobile)
+      gsap.fromTo(
         boxRef.current,
         {
-          scale: 0.2,
+          scale: 0.25,
           opacity: 0,
           transformOrigin: "center center",
         },
         {
           scale: 1,
           opacity: 1,
-          duration: 2.2,
-          ease: "power4.out",
-        }
-      );
-
-      tl.from(
-        imagesRef.current,
-        {
-          opacity: 0,
-          scale: 0.95,
-          rotate: -2,
-          y: 80,
-          x: (i) => (i % 2 === 0 ? -50 : 50),
-          duration: 2,
-          stagger: 0.3,
-          ease: "power4.out",
-        },
-        "+=0.2"
-      );
-
-      imagesRef.current.forEach((img, i) => {
-        gsap.to(img, {
-          y: i % 2 === 0 ? -25 : -15,
-          ease: "none",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "bottom top",
-            scrub: true,
+            end: "top top",
+            scrub: 1,
+            invalidateOnRefresh: true,
           },
+        }
+      );
+
+      const mm = gsap.matchMedia();
+
+      // Desktop-only pinning and image entrance animations
+      mm.add("(min-width: 1024px)", () => {
+        // 2. Timeline for pinned state: pins the section and animates the images/content
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=150%",
+            scrub: 1,
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        // Staggered entry animation for the image wrapper divs
+        tl.fromTo(
+          imagesRef.current,
+          {
+            opacity: 0,
+            scale: 0.85,
+            y: 80,
+            rotate: (i) => (i % 2 === 0 ? -3 : 3),
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            rotate: 0,
+            stagger: 0.25,
+            duration: 2,
+            ease: "power4.out",
+          }
+        );
+
+        // 3. Parallax effect for the inner image components (applied to child HTML img tags to avoid conflict)
+        imagesRef.current.forEach((wrapper, i) => {
+          if (!wrapper) return;
+          const img = wrapper.querySelector("img");
+          if (!img) return;
+
+          gsap.to(img, {
+            y: i % 2 === 0 ? -35 : -20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          });
         });
       });
     }, sectionRef);
@@ -78,7 +105,7 @@ const AboutSection = () => {
     <div className="relative">
       <section
         ref={sectionRef}
-        className="relative py-20 md:py-28 overflow-hidden bg-[#f3f3f3]"
+        className="relative py-20 md:py-28 lg:py-0 lg:h-screen lg:flex lg:items-center lg:justify-center overflow-hidden bg-[#f3f3f3]"
       >
         {/* WHITE BOX */}
         <div
@@ -91,6 +118,7 @@ const AboutSection = () => {
         <div
           ref={(el) => (imagesRef.current[0] = el)}
           className="
+            hidden sm:block
             absolute 
             top-6 left-6
             sm:top-16 sm:left-10 
@@ -99,11 +127,11 @@ const AboutSection = () => {
           "
         >
           <Image
-            src="/products/cc.webp"
+            src="/products/cc.jpg"
             alt="Oil Bottle"
-            width={120}
-            height={120}
-            className="sm:w-[160px] md:w-[180px] lg:w-[220px] rounded-xl shadow-xl"
+            width={150}
+            height={150}
+            className="sm:w-[160px] md:w-[180px] lg:w-[250px] rounded-xl shadow-xl"
           />
         </div>
 
@@ -111,6 +139,7 @@ const AboutSection = () => {
         <div
           ref={(el) => (imagesRef.current[1] = el)}
           className="
+            hidden sm:block
             absolute 
             top-6 right-6
             sm:top-16 sm:right-10 
@@ -124,7 +153,7 @@ const AboutSection = () => {
             width={140}
             height={140}
             priority
-            className="sm:w-[160px] md:w-[180px] lg:w-[220px] rounded-xl shadow-xl"
+            className="sm:w-[160px] md:w-[180px] lg:w-[250px] rounded-xl shadow-xl"
           />
         </div>
 
@@ -132,6 +161,7 @@ const AboutSection = () => {
         <div
           ref={(el) => (imagesRef.current[2] = el)}
           className="
+            hidden sm:block
             absolute 
             bottom-7 left-6
             sm:bottom-24 sm:left-10 
@@ -140,12 +170,12 @@ const AboutSection = () => {
           "
         >
           <Image
-            src="/products/kesakala3.webp"
+            src="/products/kesakala3.jpg"
             alt="Oil Bottle"
             width={120}
             height={120}
             priority
-            className="sm:w-[160px] md:w-[180px] lg:w-[220px] rounded-xl shadow-xl"
+            className="sm:w-[160px] md:w-[180px] lg:w-[250px] rounded-xl shadow-xl"
           />
         </div>
 
@@ -153,6 +183,7 @@ const AboutSection = () => {
         <div
           ref={(el) => (imagesRef.current[3] = el)}
           className="
+            hidden sm:block
             absolute 
             bottom-7 right-6
             sm:bottom-24 sm:right-10 
@@ -165,7 +196,7 @@ const AboutSection = () => {
             alt="Oil Bottle"
             width={120}
             height={120}
-            className="sm:w-[160px] md:w-[180px] lg:w-[220px] rounded-xl shadow-xl"
+            className="sm:w-[160px] md:w-[180px] lg:w-[250px] rounded-xl shadow-xl"
           />
         </div>
 
