@@ -16,15 +16,15 @@ export default function HomePage() {
     <>
       <section className="bg-primary ">
         <Hero />
-        <Statistics />
+        {/* <Statistics /> */}
       </section>
-      <AboutSection />
+      {/* <AboutSection />
       <OilsSection />
       <HandpickedSection />
       <CraftSection />
       <GallerySection />
       <TraditionJournal />
-      <Review />
+      <Review /> */}
 
       {/* <Testimonials /> */}
       {/* <ConnectSection /> */}
