@@ -172,6 +172,7 @@ const Hero = () => {
           width={1920}
           height={400}
           sizes="100vw"
+          priority
           className="w-full h-auto block object-cover"
           alt="Torn Paper Background"
         />
